@@ -1,5 +1,6 @@
 <script>
-import {posts} from '../posts'
+  import PostList from "@/components/PostList.svelte";
+  import { posts } from "../posts";
 </script>
 
 <svelte:head>
@@ -8,11 +9,4 @@ import {posts} from '../posts'
 
 <h1>Sample Weblog!</h1>
 
-{#each posts as post}
-<article>
-  <a href={`/posts/${post.permalink}`}>
-  <h2>{post.title}</h2>
-  <p>{post.summary}</p>
-</a>
-</article>
-{/each}
+<PostList {posts} />

@@ -1,15 +1,17 @@
 <script context="module">
-    import {findPost} from '../../posts'
+  import { findPost } from "../../posts";
 
-    export function preload(page) {
-        return { post: findPost(page.params.permalink)}
-    }
+  export function preload(page) {
+    return { post: findPost(page.params.permalink) };
+  }
 </script>
 
 <script>
-    export let post
+  import Tags from "@/components/Tags.svelte";
+  export let post;
 </script>
 
 <h1>{post.title}</h1>
+<Tags tags={post.tags} />
 
 {@html post.html}
