@@ -7,6 +7,7 @@
 </script>
 
 <script>
+  import highlight from "@/highlight";
   import Tags from "@/components/Tags.svelte";
   export let post;
 </script>
@@ -14,4 +15,6 @@
 <h1>{post.title}</h1>
 <Tags tags={post.tags} />
 
-{@html post.html}
+<div use:highlight>
+  {@html post.html}
+</div>
